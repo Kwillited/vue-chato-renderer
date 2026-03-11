@@ -42,14 +42,6 @@ vue-chato-renderer/
 └── index.js                   # 插件入口
 ```
 
-## 安装
-
-### NPM 安装
-
-```bash
-npm install vue-chato-renderer
-```
-
 ### 直接引入
 
 ```html
