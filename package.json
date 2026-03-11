@@ -1,0 +1,27 @@
+{
+  "name": "vue-chato-renderer",
+  "version": "1.0.0",
+  "description": "A Vue component for rendering markdown with enhanced features",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'No build script specified'",
+    "test": "echo 'No test script specified'"
+  },
+  "keywords": [
+    "vue",
+    "markdown",
+    "renderer",
+    "chat",
+    "code-highlighting"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kwillited/vue-chato-renderer.git"
+  },
+  "dependencies": {
+    "vue": "^3.0.0"
+  }
+}
