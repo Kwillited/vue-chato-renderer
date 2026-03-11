@@ -1,0 +1,285 @@
+/* Vue-Chato-Renderer 样式美化 */
+@import './variables.css';
+@import './code-block-styles.css';
+
+.markdown-content {
+  line-height: var(--line-height-base);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+/* 标题样式 */
+.markdown-content :is(h1, h2, h3, h4, h5, h6) {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.markdown-content h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+}
+
+.markdown-content h2 {
+  font-size: var(--font-size-2xl);
+}
+
+.markdown-content h3 {
+  font-size: var(--font-size-xl);
+}
+
+.markdown-content h4 {
+  font-size: var(--font-size-lg);
+}
+
+.markdown-content h5 {
+  font-size: var(--font-size-base);
+}
+
+.markdown-content h6 {
+  font-size: var(--font-size-sm);
+}
+
+/* 连续标题间距 */
+.markdown-content h1 + h2,
+.markdown-content h2 + h3,
+.markdown-content h3 + h4,
+.markdown-content h4 + h5,
+.markdown-content h5 + h6,
+.markdown-content h3 + h3 {
+  margin-top: var(--space-md);
+}
+
+/* 段落样式 */
+.markdown-content p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* 列表样式 */
+.markdown-content :is(ul, ol) {
+  padding-left: 1.25rem;
+}
+
+.markdown-content ul {
+  list-style-type: disc;
+}
+
+.markdown-content ol {
+  list-style-type: decimal;
+}
+
+.markdown-content :is(ul, ol) li {
+  transition: all var(--transition-fast);
+  line-height: var(--line-height-base);
+  margin-bottom: var(--space-sm);
+}
+
+.markdown-content :is(ul, ol) li:last-child {
+  margin-bottom: 0;
+}
+
+/* 嵌套列表样式 */
+.markdown-content ol ol,
+.markdown-content ul ul {
+  padding-left: 1.75rem;
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+/* 列表项标记样式 */
+.markdown-content ul li::marker,
+.markdown-content ol li::marker,
+.markdown-content ul ul li::marker,
+.markdown-content ol ol li::marker {
+  color: var(--color-list-marker);
+  font-size: 1rem;
+  transition: transform var(--transition-fast);
+  vertical-align: text-bottom;/* 添加垂直对齐属性 */
+}
+
+/* 水平线样式 */
+.markdown-content hr {
+  margin: 0;
+  padding: 0;
+  border: none;
+  height: 0;
+  background: none;
+  display: block;
+  width: 100%;
+}
+
+/* 链接样式 */
+.markdown-content a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* 引用样式 */
+.markdown-content blockquote {
+  border-left: 4px solid var(--color-quote-border);
+  padding-left: var(--quote-padding);
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  color: var(--color-quote-text);
+  font-style: italic;
+}
+
+/* 行内代码样式 */
+.markdown-content code.inline-code {
+  background-color: var(--color-bg-secondary);
+  padding: 0.125rem 0.25rem;
+  border-radius: var(--border-radius-sm);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  border: none;
+}
+
+
+
+/* 表格样式 */
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0;
+}
+
+.markdown-content table th,
+.markdown-content table td {
+  padding: var(--table-padding);
+  text-align: left;
+  border-bottom: 1px solid var(--color-table-border);
+}
+
+.markdown-content table th {
+  font-weight: 600;
+  text-transform: none;
+  font-size: var(--font-size-sm);
+}
+
+/* 表格响应式处理 */
+@media (max-width: 640px) {
+  .markdown-content table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* 数学公式样式 */
+.markdown-content .math-block {
+  margin: var(--space-sm) 0;
+  padding: var(--space-sm);
+  text-align: center;
+}
+
+/* 行内数学公式样式 */
+.markdown-content .katex {
+  font-size: 1.1em;
+  font-family: var(--font-family-mono);
+}
+
+/* 块级元素通用间距 */
+.markdown-content :is(ul, ol, dl, figure) {
+  margin-bottom: var(--space-md);
+}
+
+/* 表格间距 */
+.markdown-content table {
+  margin-bottom: var(--space-lg);
+}
+
+/* 列表项段落样式 */
+.markdown-paragraph {
+  margin: 0;
+  padding: 0;
+  line-height: var(--line-height-base);
+}
+
+.markdown-paragraph span {
+  display: inline;
+}
+
+/* 任务列表段落样式 */
+.task-list li .markdown-paragraph {
+  display: inline;
+  vertical-align: middle;
+}
+
+/* 任务列表复选框样式 */
+.task-checkbox {
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+
+
+/* 图片容器样式 */
+.markdown-content .image-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: var(--image-margin) 0;
+  min-width: var(--image-min-size);
+  min-height: var(--image-min-size);
+}
+
+/* 图片样式 */
+.markdown-content .markdown-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-sm);
+  display: none; /* 初始隐藏，加载成功后显示 */
+}
+
+/* 图片状态样式 */
+.markdown-content .image-loading,
+.markdown-content .image-error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--image-min-size);
+  height: var(--image-min-size);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-image-loading-bg);
+  border: 1px solid var(--color-image-loading-border);
+  border-radius: var(--border-radius-sm);
+  color: var(--color-image-loading-text);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.markdown-content .image-loading i,
+.markdown-content .image-error i {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  color: var(--color-image-loading-icon);
+}
+
+.markdown-content .image-loading span,
+.markdown-content .image-error span {
+  font-size: 0.9em;
+}
+
+/* 加载失败状态初始隐藏 */
+.markdown-content .image-error {
+  display: none; /* 初始隐藏，加载失败后显示 */
+}
+
+/* 强制去掉列表内段落的边距 */
+.markdown-content li .markdown-paragraph,
+.markdown-content li p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  display: inline; /* 或者 inline-block */
+  vertical-align: baseline; 
+}
