@@ -262,6 +262,4 @@ MIT License
 
 ## 联系方式
 
-- 作者：Chato Team
-- 邮箱：contact@chato.dev
-- 官网：https://chato.dev
+- 作者：JITO Team
